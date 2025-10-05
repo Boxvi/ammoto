@@ -3,9 +3,14 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebas
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-analytics.js";
 import {
     getFirestore,
-    collection, getDocs
+    collection, 
+    getDocs,
+    addDoc,
+    deleteDoc,
+    doc
+
 } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js";
-    
+
 const firebaseConfig = {
     apiKey: "AIzaSyAAnP59Exq0909g9_urRwJM2Pa2EafwuOQ",
     authDomain: "mar-motos.firebaseapp.com",
@@ -20,12 +25,13 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 
+export { collection, getDocs, addDoc, deleteDoc, doc };
 
-export async function getMotos() {
-    const querySnapshot = await getDocs(collection(db, "motos"));
-    const data = [];
-    querySnapshot.forEach((doc) => {
-        data.push({ id: doc.id, ...doc.data() });
-    });
-    return data;
-}
+// export async function getMotos() {
+//     const querySnapshot = await getDocs(collection(db, "motos"));
+//     const data = [];
+//     querySnapshot.forEach((doc) => {
+//         data.push({ id: doc.id, ...doc.data() });
+//     });
+//     return data;
+// }
