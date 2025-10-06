@@ -1,15 +1,53 @@
-<body class="bg-gray-50 p-4">
-  <header class="flex justify-between items-center mb-4">
-    <h1 class="text-xl font-bold">Motos</h1>
-    <button id="btnAgregar" class="bg-blue-600 text-white px-3 py-2 rounded">Agregar</button>
-  </header>
+<section class="bg-gray-50 p-4">
+    <header class="flex justify-between items-center mb-4">
+        <h1 class="text-xl font-bold">Motos</h1>
+        <button id="btnAgregar" class="bg-blue-600 text-white px-3 py-2 rounded">Agregar</button>
+    </header>
 
-  <div id="lista-motos" class="space-y-2"></div>
+    <h1>test</h1>
+    <div id="lista-motos" class="p-4 space-y-4"></div>
 
-</body>
+
+    <!-- Modal genérico -->
+    <div id="modal" class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center hidden z-50">
+
+        <div class="bg-white dark:bg-background-dark rounded-2xl shadow-lg w-11/12 max-w-md p-6 relative">
+            <button id="modalClose"
+                class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 dark:hover:text-gray-200">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+
+            <h2 id="modalTitle" class="text-xl font-bold mb-4">Crear Moto</h2>
+
+            <form id="modalForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Nombre</label>
+                    <input id="nombreInput" type="text"
+                        class="w-full mt-1 p-2 border rounded-lg dark:bg-background-dark/40"
+                        placeholder="Ej. Honda XR 150">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Código / Sticker</label>
+                    <input id="codigoInput" type="text"
+                        class="w-full mt-1 p-2 border rounded-lg dark:bg-background-dark/40" placeholder="Ej. 123456">
+                </div>
+                <div class="flex justify-end gap-2 pt-2">
+                    <button type="button" id="btnEliminar"
+                        class="hidden bg-red-500 text-white px-3 py-2 rounded-lg">Eliminar</button>
+                    <button type="submit" class="bg-primary text-white px-4 py-2 rounded-lg">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
 
 
-<!-- 
+
+
+
+
+
+    <!-- 
 <section>
   <h1 class="text-xl font-bold mb-4">📦 Elementos</h1>
   <div id="lista-elementos" class="flex flex-col gap-3"></div>
