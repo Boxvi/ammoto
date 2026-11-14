@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://store.boxvisoft.com/sitemap.xml
